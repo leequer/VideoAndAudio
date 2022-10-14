@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion versionCompiler
+//   	buildToolsVersion versionBuildTool
+
+   	compileOptions {
+   		sourceCompatibility javaSourceCompatibility
+   		targetCompatibility javaTargetCompatibility
+   	}
+
+    defaultConfig {
+        applicationId "com.serenegiant.screenrecordingsample"
+        minSdkVersion 21
+        targetSdkVersion versionTarget
+        versionCode versionCodeNum
+        versionName versionNameString
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+}
